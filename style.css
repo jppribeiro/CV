@@ -48,6 +48,10 @@ body {
     font-weight: 900;
 }
 
+#mazeCanvas {
+    margin-bottom: 20px;
+}
+
 button {
     font-family: 'Roboto Mono', monospace;
     font-size: 14px;
