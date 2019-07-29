@@ -26,6 +26,17 @@ let prize = {
   aspect: 'X'
 }
 
+let checkpoints = {
+    stage1_intro: 0,
+    stage2_eduIst: 0,
+    stage3_work: 0,
+    stage4_ac:0,
+    stage5_skills: 0,
+    stage6_soft: 0,
+    stage7_contact: 0,
+    stage8_end: 0
+}
+
 /*
 Object for cell
 
@@ -112,25 +123,28 @@ function moveExcavator(arr) {
     let posX = arr[0];
     let posY = arr[1];
 
-    maze.plan[posY][posX].isExcavated = true;
+    maze.plan[posX][posY].isExcavated = true;
 
     let availableRooms = [0,0,0,0];
 
     //Check how many rooms are available on each move direction
 
-    if (posY - 2 > 0 && maze.plan[posY - 2][posX].type === 'room' && maze.plan[posY - 2][posX].isExcavated === false) {
+    
+    
+    
+
+    if (posY - 2 > 0 && maze.plan[posX][posY-2].type === 'room' && maze.plan[posX][posY-2].isExcavated === false) {
         availableRooms[0] = 1;
     }
-    if(posX + 2 < maze.plan[posY].length && maze.plan[posY][posX + 2].type === 'room' && maze.plan[posY][posX + 2].isExcavated === false) {
+    if(posX + 2 < maze.plan.length && maze.plan[posX+2][posY].type === 'room' && maze.plan[posX+2][posY].isExcavated === false) {
         availableRooms[1] = 1;
     }
-    if(posY + 2 < maze.plan.length && maze.plan[posY + 2][posX].type === 'room' && maze.plan[posY + 2][posX].isExcavated === false) {
+    if(posY + 2 < maze.plan[posX].length && maze.plan[posX][posY+2].type === 'room' && maze.plan[posX][posY+2].isExcavated === false) {
         availableRooms[2] = 1;
     }
-    if(posX - 2 > 0 && maze.plan[posY][posX - 2].type === 'room' && maze.plan[posY][posX - 2].isExcavated === false) {
+    if(posX - 2 > 0 && maze.plan[posX-2][posY].type === 'room' && maze.plan[posX-2][posY].isExcavated === false) {
         availableRooms[3] = 1;
-    }
-
+    }    
 
     /**
      1 - Move Up
@@ -141,9 +155,6 @@ function moveExcavator(arr) {
 
     let move = randomizer(availableRooms);
 
-    //console.log(move);
-
-
     let nextX = 0;
 
     let nextY = 0;
@@ -151,31 +162,31 @@ function moveExcavator(arr) {
     if (move === 1) {
         nextX = 0;
         nextY = -2;
-        maze.plan[posY - 1][posX].type = 'room';
-        maze.plan[posY - 1][posX].isExcavated = true;
-        maze.plan[posY - 1][posX].isWalked = false;
-        maze.plan[posY - 1][posX].isSolution = false;
+        maze.plan[posX][posY-1].type = 'room';
+        maze.plan[posX][posY-1].isExcavated = true;
+        maze.plan[posX][posY-1].isWalked = false;
+        maze.plan[posX][posY-1].isSolution = false;
     } else if(move === 2) {
         nextX = 2;
         nextY = 0;
-        maze.plan[posY][posX + 1].type = 'room';
-        maze.plan[posY][posX + 1].isExcavated = true;
-        maze.plan[posY][posX + 1].isWalked = false;
-        maze.plan[posY][posX + 1].isSolution = false;
+        maze.plan[posX+1][posY].type = 'room';
+        maze.plan[posX+1][posY].isExcavated = true;
+        maze.plan[posX+1][posY].isWalked = false;
+        maze.plan[posX+1][posY].isSolution = false;
     } else if(move === 3) {
         nextX = 0;
         nextY = 2;
-        maze.plan[posY + 1][posX].type = 'room';
-        maze.plan[posY + 1][posX].isExcavated = true;
-        maze.plan[posY + 1][posX].isWalked = false;
-        maze.plan[posY + 1][posX].isSolution = false;
+        maze.plan[posX][posY+1].type = 'room';
+        maze.plan[posX][posY+1].isExcavated = true;
+        maze.plan[posX][posY+1].isWalked = false;
+        maze.plan[posX][posY+1].isSolution = false;
     } else if(move === 4) {
         nextX = -2;
         nextY = 0;
-        maze.plan[posY][posX - 1].type = 'room';
-        maze.plan[posY][posX - 1].isExcavated = true;
-        maze.plan[posY][posX - 1].isWalked = false;
-        maze.plan[posY][posX - 1].isSolution = false;
+        maze.plan[posX-1][posY].type = 'room';
+        maze.plan[posX-1][posY].isExcavated = true;
+        maze.plan[posX-1][posY].isWalked = false;
+        maze.plan[posX-1][posY].isSolution = false;
     }
 
     let totalAvailableRooms = 0;
@@ -199,22 +210,22 @@ function movePlayer(arr) {
   let posX = arr[0];
   let posY = arr[1];
 
-  maze.plan[posY][posX].isWalked = true;
+  maze.plan[posX][posY].isWalked = true;
 
   let availableRooms = [0,0,0,0];
 
-  //Check how many rooms are available on each move direction
+  //Check how many rooms are available on each move direction    
 
-    if ( maze.plan[posY - 1][posX].type === 'room' && maze.plan[posY - 1][posX].isWalked === false) {
+    if ( maze.plan[posX][posY-1].type === 'room' && maze.plan[posX][posY-1].isWalked === false) {
         availableRooms[0] = 1;
     }
-    if ( maze.plan[posY][posX + 1].type === 'room' && maze.plan[posY][posX + 1].isWalked === false) {
+    if ( maze.plan[posX+1][posY].type === 'room' && maze.plan[posX+1][posY].isWalked === false) {
         availableRooms[1] = 1;
     }
-    if( maze.plan[posY + 1][posX].type === 'room' && maze.plan[posY + 1][posX].isWalked === false) {
+    if( maze.plan[posX][posY+1].type === 'room' && maze.plan[posX][posY+1].isWalked === false) {
         availableRooms[2] = 1;
     }
-    if( maze.plan[posY][posX - 1].type === 'room' && maze.plan[posY][posX - 1].isWalked === false) {
+    if( maze.plan[posX-1][posY].type === 'room' && maze.plan[posX-1][posY].isWalked === false) {
         availableRooms[3] = 1;
     }
 
@@ -307,7 +318,7 @@ function pathFinder() {
 
         if (nextMove[0] === 0 && nextMove[1] === 0) {
             player.stack.pop();
-        } else if (nextMove[0] === prize.position[1] && nextMove[1] === prize.position[0]) {
+        } else if (nextMove[0] === prize.position[0] && nextMove[1] === prize.position[1]) {
             player.stack.push(nextMove);
             finalSolution();
             player.position = [1,1];
@@ -329,7 +340,7 @@ function finalSolution() {
 
   //WARNING! XY Coordinates in the stack are swapped from ones in the array!
   for(let i = 0; i < player.stack.length; i++) {
-    maze.plan[player.stack[i][1]][player.stack[i][0]].isSolution = true;
+    maze.plan[player.stack[i][0]][player.stack[i][1]].isSolution = true;
   }
 }
 
@@ -367,6 +378,20 @@ let fillStyles = {
     yellow: '#f0b917'
 }
 
+function setCheckpoints() {
+    checkpoints.stage1_intro = Math.floor(player.stack.length * 1/8);
+    checkpoints.stage2_eduIst = Math.floor(player.stack.length * 2/8);
+    checkpoints.stage3_work = Math.floor(player.stack.length * 3/8);
+    checkpoints.stage4_ac = Math.floor(player.stack.length * 4/8);
+    checkpoints.stage5_skills = Math.floor(player.stack.length * 5/8);
+    checkpoints.stage6_soft = Math.floor(player.stack.length * 6/8);
+    checkpoints.stage7_contact = Math.floor(player.stack.length * 7/8);
+    checkpoints.stage8_end = Math.floor(player.stack.length * 8/8);
+
+
+}
+
+
 function showPath() {    
     settings.pathVisible = true;
 
@@ -403,7 +428,9 @@ document.addEventListener("keydown", event => {
             break;
     }
     drawMaze();
+    checkStageDisplay();
 });
+
 
 function checkMove(x, y) {
 
@@ -415,10 +442,62 @@ function checkMove(x, y) {
 
 }
 
+function checkStageDisplay() {
+
+    let stackPos = findStackIndex();
+
+    console.log(stackPos);
+    
+
+    if (stackPos === -1) {return;}
+
+    if (stackPos <= checkpoints.stage1_intro) {
+        closeAllDiv();
+        openDiv(document.getElementById('intro'));
+    }
+}
+
+function findStackIndex() {
+
+    let index = 0;
+
+    for (let i = 0; i < player.stack.length; i++) {
+
+        if (player.stack[i][0] === player.position[0] && player.stack[i][1] === player.position[1]) {
+
+            return index;
+
+        }
+
+        index++;
+    }
+
+    return -1;
+}
+
+function openDiv (element) {
+
+    element.style.display = 'block';
+
+}
+
+function closeAllDiv() {
+    document.getElementById('start').style.display = 'none';
+    document.getElementById('intro').style.display = 'none';
+}
+
+function startDiv () {
+    document.getElementById('intro').style.display = 'none';
+}
+
 setGrid();
 
 mazeGenerator();
 
 pathFinder();
 
+setCheckpoints();
+
 drawMaze();
+
+startDiv();
