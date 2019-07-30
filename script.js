@@ -500,7 +500,7 @@ function transition (newView) {
         }
     }, 50);
 
-    let closeCurrentDiv = setInterval(function() {
+    setTimeout(function() {
         currentView.style.display = 'none';
         newView.style.opacity = 0;
         newView.style.display = 'block';
@@ -509,46 +509,20 @@ function transition (newView) {
 
             if (newView.style.opacity < 1) {
                 newView.style.opacity += 0.1;
-
             } else {
-                clearInterval(closeCurrentDiv);
+                clearInterval(fadein);
             }
-        console.log(newView.style.opacity);
 
         }, 50);
-        
 
+    }, 501);
 
-    }, 500);
-
+    currentView = newView;
 }
 
 function startDiv () {
     currentView = document.getElementById('start');
     document.getElementById('stage1').style.display = 'none';
-}
-
-function fadeOut(target) {
-
-    
-}
-
-function fadeIn(target) {
-
-    //target.style.display = 'block';
-
-    console.log('fadein');
-    
-    let fadeEffect = setInterval(function() {
-        if (!target.style.opacity) {
-            target.style.opacity = 0;
-        }
-        if (target.style.opacity === 0) {
-            target.style.opacity += 0.1;
-        } else {
-            clearInterval(fadeEffect);
-        }
-    }, 100);
 }
 
 setGrid();
