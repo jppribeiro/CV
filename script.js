@@ -458,8 +458,12 @@ function checkStageDisplay() {
         let trigger = document.getElementById('stage1');
         transition(trigger);
 
-    } else if (stackPos <= checkpoints.stage2_eduIst) {
-
+    } else if (stackPos <= checkpoints.stage2_eduIst && stackPos > checkpoints.stage1_intro) {
+        let trigger = document.getElementById('stage2');
+        transition(trigger);
+    } else if (stackPos <= checkpoints.stage3_work && stackPos > checkpoints.stage2_eduIst) {
+        let trigger = document.getElementById('stage3');
+        transition(trigger);
     }
 }
 
@@ -470,59 +474,43 @@ function findStackIndex() {
     for (let i = 0; i < player.stack.length; i++) {
 
         if (player.stack[i][0] === player.position[0] && player.stack[i][1] === player.position[1]) {
-
             return index;
-
         }
-
         index++;
     }
-
     return -1;
 }
 
-function transition (newView) {
+function transition(newView) {
 
-    if (newView === currentView) {
+    if (currentView === newView) {
         return;
     }
 
-    // fadeout
+    hide(currentView);
+    window.setTimeout(function() {
+        show(newView);
+    }, 251)
 
-    let fadeout = setInterval(function() {
-        if (!currentView.style.opacity) {
-            currentView.style.opacity = 1;
-        }
-        if (currentView.style.opacity > 0) {
-            currentView.style.opacity -= 0.1;
-        } else {
-            clearInterval(fadeout);
-        }
-    }, 50);
+}
 
-    setTimeout(function() {
-        currentView.style.display = 'none';
-        newView.style.opacity = 0;
-        newView.style.display = 'block';
-        
-        let fadein = setInterval(function () {
+function show(view) {
+        // Triggers the transition from .section class
+        view.classList.add('is-visible');
+        view.style.opacity = 1;
+        currentView = view;
+}
 
-            if (newView.style.opacity < 1) {
-                newView.style.opacity += 0.1;
-            } else {
-                clearInterval(fadein);
-            }
+function hide(view) {
+    view.style.opacity = 0;
 
-        }, 50);
-
-    }, 501);
-
-    currentView = newView;
+    window.setTimeout(function () {
+        view.classList.remove('is-visible');
+    }, 250)
 }
 
 function startDiv () {
     currentView = document.getElementById('start');
-    document.getElementById('stage1').style.display = 'none';
 }
 
 setGrid();

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Arimo|Roboto|Roboto+Mono|Lato|Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arimo:400,700|Roboto|Roboto+Mono|Lato|Shadows+Into+Light&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/4c4700d961.js"></script>
 </head>
 <body>
@@ -27,28 +27,57 @@
 
     <div class="page">
         <div id="profile">
-                <div id="start">
-                    <h1 class="title">...let's go for a walk?</h1>
-                    <h4>Hi! I'm <span class="yellow">João</span>. Thank you for your interest in my profile.</h4>
+                <div id="start" class="section is-visible">
+                    <h1 class="title">...hey there!</h1>
+                    <p>My name is <span class="yellow">João</span> and I'm a Software Developer.</p>
+                    <p>Lets go for a walk?</p>
                     <div id="instructions">
                         <ul class="fa-ul">
-                            <li class="item"><span class="fa-li"><i class="fas fa-angle-right"></i></span>This is an interactive CV.</li>
-                            <li class="item"><span class="fa-li"><i class="fas fa-angle-right"></i></span>Use the arrow keys to transverse the maze.</li>
-                            <li class="item"><span class="fa-li"><i class="fas fa-angle-right"></i></span>All the information will appear along the way.</li>
-                            <li class="item"><span class="fa-li"><i class="fas fa-angle-right"></i></span>If you get stuck click the "I'm stuck" button and the path will appear.</li>
-                            <li class="item"><span class="fa-li"><i class="fas fa-angle-right"></i></span>You can click the "Pdf" button to get the .pdf version of my CV.</li>
+                            <li><span class="fa-li"><i class="fas fa-angle-right"></i></span>This is an interactive CV.</li>
+                            <li><span class="fa-li"><i class="fas fa-angle-right"></i></span>Use the arrow keys to transverse the maze.</li>
+                            <li><span class="fa-li"><i class="fas fa-angle-right"></i></span>All the information will appear along the way.</li>
+                            <li><span class="fa-li"><i class="fas fa-angle-right"></i></span>If you get stuck click the "I'm stuck" button and the path will appear.</li>
+                            <li><span class="fa-li"><i class="fas fa-angle-right"></i></span>You can click the "Pdf" button to get the .pdf version of my CV.</li>
                         </ul>
                     </div>
                 </div>
-                <div id="stage1">
-                    <h1 class="title">introduction</h1>
-                    <p>Ok, so my full name is <span class="turquoise"> João Pedro Parreira Ribeiro </span>. 
-                    <p>I'm a hard shell on a soft nut. I’ve spent the last decade designing <span class="pink"> bridges </span>  throughout the world. My <span class="yellow"> structural engineering </span> background gave the foundations about logic, constraints, and structure that allow me to write efficient and functional code.</p>
-                    <br/>
-                    <p>Now, <span class="pink"> unbound </span> by the limits of physics, I want my creativity and skills to take the wheel. And above all else, I’m ready for my next challenge as a software developer.</p>
+                <div id="stage1" class="section">
+                    <h1 class="title">introduction</h1> 
+                    <p><i class="fas fa-angle-right"></i> I'm a hard shell on a soft nut. I’ve spent the last decade designing <span class="pink">bridges</span>  throughout the world. My <span class="yellow"> structural engineering</span> background gave the foundations about logic, constraints, and structure that allow me to write efficient and functional code.</p>
+                    <p>Now, <span class="turquoise"> unbound </span> by the limits of physics, I want my creativity and skills to take the wheel. And above all else, I’m ready for my next <strong>challenge</strong> as a <span class="yellow">software developer.</span></p>
                 </div>
-                <div>
-                    
+                <div id="stage2" class="section">
+                    <h1 class="title">skills</h1>
+                    <p>These are <span class="turquoise">some</span> of the technologies I use.</p>
+                    <div id="table-skills">
+                        <div class="col">
+                            <p>Java</p>
+                            <p>Hibernate</p>
+                            <p>Spring</p>
+                            <p>Spring MVC</p>
+                        </div>
+                        <div class="col skill">
+                            <p><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="far fa-circle"></i></p>
+                            <p><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="far fa-circle"></i></p>
+                            <p><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="far fa-circle"></i><i class="far fa-circle"></i></p>
+                            <p><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="far fa-circle"></i><i class="far fa-circle"></i></p>
+                        </div>
+                        <div class="col">
+                            <p>JavaScript</p>
+                            <p>REST</p>
+                            <p>SQL</p>
+                            <p>HTML/CSS</p>
+                        </div>
+                        <div class="col skill">
+                                <p><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="far fa-circle"></i></p>
+                                <p><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="far fa-circle"></i><i class="far fa-circle"></i></p>
+                                <p><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="far fa-circle"></i><i class="far fa-circle"></i></p>
+                                <p><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="far fa-circle"></i></p>
+                            </div>
+                    </div>
+                </div>
+                <div id="stage3" class="section">
+                    <h1 class="title">education...</h1>
                 </div>
         </div>
         

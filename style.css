@@ -34,11 +34,12 @@ body {
     line-height: 1.5;
     color: #2b2b28;
     background: linear-gradient(to bottom right, #d4caca, #c8cec5);
-    font-size: 13px;
+    font-size: 18px;
     margin-top:200px;
     padding: 15px;
-    width: 400px;
-    box-shadow: 7px 7px #585858;
+    width: auto;
+    box-shadow: 7px 7px #2b2b28;
+    transition: box-shadow 500ms ease-in-out;
 }
 
 .head {
@@ -52,26 +53,27 @@ body {
 
 .title {
     font-family: 'Shadows Into Light', sans-serif;
-    font-size: 4em;
+    font-size: 5em;
     font-weight: bold;
 }
 
 .yellow {
     background-color: gold;
     color: #2b2b28;
-    font-weight: bold;
 }
 
 .turquoise {
     background-color: #02FFD5;
     color: #2b2b28;
-    font-weight: bold;
 }
 
 .pink {
     background-color: #FF0296;
     color: #2b2b28;
-    font-weight: bold
+}
+
+.orange {
+    color: orange;
 }
 
 #mazeCanvas {
@@ -94,6 +96,31 @@ button:hover {
     color: #2b2b28;
 }
 
-.item:hover {
-    font-weight: bold;
+#instructions:hover{
+    box-shadow: 12px 12px #585858;
+}
+
+.section {
+    display: none;
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+}
+
+.section.is-visible {
+    display: block;
+    opacity: 1;
+    transition: opacity 250ms ease-in-out;
+}
+
+.section>p {
+    font-size: 24px;
+}
+
+.col {
+    display: inline-block;
+    padding-right: 10px;
+}
+
+.col.skill {
+    padding-right: 20px;
 }
