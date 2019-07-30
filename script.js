@@ -37,6 +37,8 @@ let checkpoints = {
     stage8_end: 0
 }
 
+let currentView;
+
 /*
 Object for cell
 
@@ -444,16 +446,20 @@ function checkMove(x, y) {
 
 function checkStageDisplay() {
 
-    let stackPos = findStackIndex();
-
-    console.log(stackPos);
-    
+    let stackPos = findStackIndex();    
 
     if (stackPos === -1) {return;}
 
-    if (stackPos <= checkpoints.stage1_intro) {
-        closeAllDiv();
-        openDiv(document.getElementById('intro'));
+    if (stackPos <= 3) {
+        let trigger = document.getElementById('start');
+        transition(trigger);
+
+    } else if (stackPos <= checkpoints.stage1_intro && stackPos > 3) {
+        let trigger = document.getElementById('stage1');
+        transition(trigger);
+
+    } else if (stackPos <= checkpoints.stage2_eduIst) {
+
     }
 }
 
@@ -475,19 +481,74 @@ function findStackIndex() {
     return -1;
 }
 
-function openDiv (element) {
+function transition (newView) {
 
-    element.style.display = 'block';
+    if (newView === currentView) {
+        return;
+    }
 
-}
+    // fadeout
 
-function closeAllDiv() {
-    document.getElementById('start').style.display = 'none';
-    document.getElementById('intro').style.display = 'none';
+    let fadeout = setInterval(function() {
+        if (!currentView.style.opacity) {
+            currentView.style.opacity = 1;
+        }
+        if (currentView.style.opacity > 0) {
+            currentView.style.opacity -= 0.1;
+        } else {
+            clearInterval(fadeout);
+        }
+    }, 50);
+
+    let closeCurrentDiv = setInterval(function() {
+        currentView.style.display = 'none';
+        newView.style.opacity = 0;
+        newView.style.display = 'block';
+        
+        let fadein = setInterval(function () {
+
+            if (newView.style.opacity < 1) {
+                newView.style.opacity += 0.1;
+
+            } else {
+                clearInterval(closeCurrentDiv);
+            }
+        console.log(newView.style.opacity);
+
+        }, 50);
+        
+
+
+    }, 500);
+
 }
 
 function startDiv () {
-    document.getElementById('intro').style.display = 'none';
+    currentView = document.getElementById('start');
+    document.getElementById('stage1').style.display = 'none';
+}
+
+function fadeOut(target) {
+
+    
+}
+
+function fadeIn(target) {
+
+    //target.style.display = 'block';
+
+    console.log('fadein');
+    
+    let fadeEffect = setInterval(function() {
+        if (!target.style.opacity) {
+            target.style.opacity = 0;
+        }
+        if (target.style.opacity === 0) {
+            target.style.opacity += 0.1;
+        } else {
+            clearInterval(fadeEffect);
+        }
+    }, 100);
 }
 
 setGrid();

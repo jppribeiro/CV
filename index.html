@@ -6,33 +6,49 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:900|Roboto|Roboto+Mono|Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arimo|Roboto|Roboto+Mono|Lato|Shadows+Into+Light&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4c4700d961.js"></script>
 </head>
 <body>
 
     <div class="sidepanel">
             <div class="head">
-                    <h1>Lets take a walk...</h1>
-                </div>
-                <div class="maze">
-                    <canvas id="mazeCanvas" width="220" height="620"></canvas>
-                    <br/>
-                    <button onclick="showPath()">I'm Stuck</button>
-                </div>
+                <i class="arrow far fa-caret-square-left"></i>
+                <i class="arrow far fa-caret-square-up"></i>
+                <i class="arrow far fa-caret-square-down"></i>
+                <i class="arrow far fa-caret-square-right"></i>
+            </div>
+            <div class="maze">
+                <canvas id="mazeCanvas" width="220" height="620"></canvas>
+                <br/>
+                <button onclick="showPath()">I'm Stuck</button>
+            </div>
     </div>
 
     <div class="page">
         <div id="profile">
                 <div id="start">
-                        <p>Hi! Thank you for your interest in my profile. My name is <span id="yellow">João</span> and I'd like to invite you on a little walk together so that you can learn a bit more about me! Is that ok?</p>
-                        <p>Use the arrow keys to navigate through the maze and I'll show you some stuff along the way.</p>
-                        <p>If you get stuck or just don't like games press the button above and a path will come up. ;)</p>
-                        <p>On our way then...</p>
+                    <h1 class="title">...let's go for a walk?</h1>
+                    <h4>Hi! I'm <span class="yellow">João</span>. Thank you for your interest in my profile.</h4>
+                    <div id="instructions">
+                        <ul class="fa-ul">
+                            <li class="item"><span class="fa-li"><i class="fas fa-angle-right"></i></span>This is an interactive CV.</li>
+                            <li class="item"><span class="fa-li"><i class="fas fa-angle-right"></i></span>Use the arrow keys to transverse the maze.</li>
+                            <li class="item"><span class="fa-li"><i class="fas fa-angle-right"></i></span>All the information will appear along the way.</li>
+                            <li class="item"><span class="fa-li"><i class="fas fa-angle-right"></i></span>If you get stuck click the "I'm stuck" button and the path will appear.</li>
+                            <li class="item"><span class="fa-li"><i class="fas fa-angle-right"></i></span>You can click the "Pdf" button to get the .pdf version of my CV.</li>
+                        </ul>
+                    </div>
                 </div>
-                <div id="intro">
-                    <p>Ok, so my full name is <span id="green">João Pedro Parreira Ribeiro</span>. I was born in a beautiful city called Évora in 1984.</p>
-                    <p>When I was 18 I left my parents house to attend college in Lisbon.</p>
-                    <p>I studied Civil Engineering at Instituto Superior Técnico where I got my M.Sc degree in Structural Engineering.</p>
+                <div id="stage1">
+                    <h1 class="title">introduction</h1>
+                    <p>Ok, so my full name is <span class="turquoise"> João Pedro Parreira Ribeiro </span>. 
+                    <p>I'm a hard shell on a soft nut. I’ve spent the last decade designing <span class="pink"> bridges </span>  throughout the world. My <span class="yellow"> structural engineering </span> background gave the foundations about logic, constraints, and structure that allow me to write efficient and functional code.</p>
+                    <br/>
+                    <p>Now, <span class="pink"> unbound </span> by the limits of physics, I want my creativity and skills to take the wheel. And above all else, I’m ready for my next challenge as a software developer.</p>
+                </div>
+                <div>
+                    
                 </div>
         </div>
         
