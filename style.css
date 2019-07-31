@@ -1,37 +1,44 @@
+
+/* DOCUMENT ELEMENTS */
+
 body {
     background-color: #ddd;
+}
+
+
+/*****************
+*    CLASSES     *
+*****************/
+
+.ac-title-el {
+    display: inline-block;
+    font-size: 22px;
+    height: 40px;
+    padding-right: 30px;
 }
 
 .arrow {
     padding: 0 8px;
 }
 
-.sidepanel {
-    background-color: #ccc;
-    height: 100%;
-    width: 300px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    text-align: center;
+
+
+.col {
+    display: inline-block;
+    padding-right: 25px;
 }
 
-.page {
-    color: rgb(94, 93, 93);
-    line-height: 1.5;
-    font-size: 18px;
-    font-family: 'Arimo', sans-serif;
-    font-weight: 100;
-    margin-top: 50px;
-    margin-left: 360px;
-    text-align: left;
-    width: 700px;
+.col.skill {
+    padding-right: 60px;
 }
 
-#instructions {
-    margin-top:100px;
+.head {
+    background-color:  #c7f0db;
+    color: #2b2b28;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2em;
+    margin-bottom: 20px;
+    padding: 10px 0;
 }
 
 .info-box {
@@ -46,62 +53,37 @@ body {
     transition: box-shadow 500ms ease-in-out;
 }
 
-.head {
-    background-color:  #c7f0db;
-    color: #2b2b28;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2em;
-    margin-bottom: 20px;
-    padding: 10px 0;
-}
-
-.title {
-    font-family: 'Shadows Into Light', sans-serif;
-    font-size: 5em;
-    font-weight: bold;
-}
-
-.yellow {
-    background-color: gold;
-    color: #2b2b28;
-}
-
-.turquoise {
-    background-color: #02FFD5;
-    color: #2b2b28;
-}
-
-.pink {
-    background-color: #FF0296;
-    color: #2b2b28;
-}
-
-.orange {
-    color: orange;
-}
-
-#mazeCanvas {
-    margin-bottom: 20px;
-}
-
-button {
-    font-family: 'Roboto Mono', monospace;
-    font-size: 14px;
-    font-weight: bold;
-    width: 80px;
-    height: 45px;
-    border-width: 0;
-    background-color: #666;
-    color: #ddd;
-}
-
-button:hover {
-    background-color: gold;
-    color: #2b2b28;
-}
-
 .info-box:hover{
     box-shadow: 12px 12px #585858;
+}
+
+.info-box-col {
+    display: inline-block;
+}
+
+.info-box-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.info-box.bootcamp {
+    line-height: 1;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+
+.page {
+    color: rgb(94, 93, 93);
+    line-height: 1.5;
+    font-size: 18px;
+    font-family: 'Arimo', sans-serif;
+    font-weight: 100;
+    margin-top: 50px;
+    margin-left: 360px;
+    text-align: left;
+    width: 900px;
 }
 
 .section {
@@ -120,11 +102,84 @@ button:hover {
     font-size: 24px;
 }
 
-.col {
-    display: inline-block;
-    padding-right: 25px;
+.sidepanel {
+    background-color: #ccc;
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    text-align: center;
 }
 
-.col.skill {
-    padding-right: 60px;
+.title {
+    font-family: 'Shadows Into Light', sans-serif;
+    font-size: 5em;
+    font-weight: bold;
 }
+
+     /*=======================================
+     =  CLASS / Background Color Highlights  =
+     ========================================*/
+     .yellow {
+        background-color: gold;
+        color: #2b2b28;
+    }
+    
+    .turquoise {
+        background-color: #02FFD5;
+        color: #2b2b28;
+    }
+    
+    .pink {
+        background-color: #FF0296;
+        color: #2b2b28;
+    }
+
+    .blue {
+        background-color: rgb(0, 225, 255);
+    }
+    
+
+
+/*********
+*  ID's  *
+**********/
+
+#bootcamp-skills {
+    display: flex;
+    align-items: flex-start;
+}
+
+#instructions {
+    margin-top:100px;
+}
+
+#mazeCanvas {
+    margin-bottom: 20px;
+}
+
+
+
+/**********
+* Buttons *
+**********/
+
+button {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    font-weight: bold;
+    width: 80px;
+    height: 45px;
+    border-width: 0;
+    background-color: #666;
+    color: #ddd;
+}
+
+button:hover {
+    background-color: gold;
+    color: #2b2b28;
+}
+
