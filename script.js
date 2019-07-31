@@ -27,14 +27,14 @@ let prize = {
 }
 
 let checkpoints = {
-    stage1_intro: 0,
-    stage2_eduIst: 0,
-    stage3_work: 0,
-    stage4_ac:0,
-    stage5_skills: 0,
-    stage6_soft: 0,
-    stage7_contact: 0,
-    stage8_end: 0
+    stage1: 0,
+    stage2: 0,
+    stage3: 0,
+    stage4:0,
+    stage5: 0,
+    stage6: 0,
+    stage7: 0,
+    stage8: 0
 }
 
 let currentView;
@@ -381,16 +381,17 @@ let fillStyles = {
 }
 
 function setCheckpoints() {
-    checkpoints.stage1_intro = Math.floor(player.stack.length * 1/8);
-    checkpoints.stage2_eduIst = Math.floor(player.stack.length * 2/8);
-    checkpoints.stage3_work = Math.floor(player.stack.length * 3/8);
-    checkpoints.stage4_ac = Math.floor(player.stack.length * 4/8);
-    checkpoints.stage5_skills = Math.floor(player.stack.length * 5/8);
-    checkpoints.stage6_soft = Math.floor(player.stack.length * 6/8);
-    checkpoints.stage7_contact = Math.floor(player.stack.length * 7/8);
-    checkpoints.stage8_end = Math.floor(player.stack.length * 8/8);
+    checkpoints.stage1 = Math.floor(player.stack.length * 1/8);
+    checkpoints.stage2 = Math.floor(player.stack.length * 2/8);
+    checkpoints.stage3 = Math.floor(player.stack.length * 3/8);
+    checkpoints.stage4 = Math.floor(player.stack.length * 4/8);
+    checkpoints.stage5 = Math.floor(player.stack.length * 5/8);
+    checkpoints.stage6 = Math.floor(player.stack.length * 6/8);
+    checkpoints.stage7 = Math.floor(player.stack.length * 7/8);
+    checkpoints.stage8 = Math.floor(player.stack.length * 8/8);
 
-
+    console.log(player.stack.length);
+    
 }
 
 
@@ -441,7 +442,6 @@ function checkMove(x, y) {
     }
 
     return false;
-
 }
 
 function checkStageDisplay() {
@@ -450,21 +450,24 @@ function checkStageDisplay() {
 
     if (stackPos === -1) {return;}
 
+    let trigger;
+
     if (stackPos <= 3) {
-        let trigger = document.getElementById('start');
-        transition(trigger);
+        trigger = document.getElementById('start');
+    } else if (stackPos <= checkpoints.stage1 && stackPos > 3) {
+        trigger = document.getElementById('stage1');
+    } else if (stackPos <= checkpoints.stage2 && stackPos > checkpoints.stage1) {
+        trigger = document.getElementById('stage2');
+    } else if (stackPos <= checkpoints.stage3 && stackPos > checkpoints.stage2) {
+        trigger = document.getElementById('stage3');
+    } else if (stackPos <= checkpoints.stage4 && stackPos > checkpoints.stage3) {
+        trigger = document.getElementById('stage4');
+    } else if (stackPos <= checkpoints.stage5 && stackPos > checkpoints.stage4) {
+        trigger = document.getElementById('stage5');
+    } 
 
-    } else if (stackPos <= checkpoints.stage1_intro && stackPos > 3) {
-        let trigger = document.getElementById('stage1');
-        transition(trigger);
+    transition(trigger);
 
-    } else if (stackPos <= checkpoints.stage2_eduIst && stackPos > checkpoints.stage1_intro) {
-        let trigger = document.getElementById('stage2');
-        transition(trigger);
-    } else if (stackPos <= checkpoints.stage3_work && stackPos > checkpoints.stage2_eduIst) {
-        let trigger = document.getElementById('stage3');
-        transition(trigger);
-    }
 }
 
 function findStackIndex() {
@@ -490,7 +493,7 @@ function transition(newView) {
     hide(currentView);
     window.setTimeout(function() {
         show(newView);
-    }, 251)
+    }, 250)
 
 }
 
