@@ -67,7 +67,7 @@ body {
 }
 
 .info-box.bootcamp {
-    line-height: 1;
+    line-height: 0.7;
     margin-right: 20px;
     margin-bottom: 20px;
     font-size: 14px;
@@ -147,6 +147,10 @@ body {
 /*********
 *  ID's  *
 **********/
+
+#ac-bootcamp {
+    vertical-align: middle;
+}
 
 #bootcamp-skills {
     display: flex;
