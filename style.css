@@ -1,8 +1,12 @@
 
 /* DOCUMENT ELEMENTS */
 
+html {
+    height: 100%;
+}
+
 body {
-    background-color: #ddd;
+    background: linear-gradient(to bottom right, #02FFD5, #00FF9D);
 }
 
 
@@ -13,8 +17,13 @@ body {
 .ac-title-el {
     display: inline-block;
     font-size: 22px;
-    height: 40px;
     padding-right: 30px;
+    vertical-align: middle;
+}
+
+.ac-title-el>h1 {
+    margin: 10px 0;
+    padding-right:150px; 
 }
 
 .arrow {
@@ -43,18 +52,18 @@ body {
 
 .info-box {
     line-height: 1.5;
-    color: #2b2b28;
-    background: linear-gradient(to bottom right, #d4caca, #c8cec5);
+    color: #eee;
+    background: linear-gradient(to bottom right, rgb(124, 124, 119), rgb(139, 141, 128));
     font-size: 18px;
+    margin-top: 30px;
     padding: 15px;
-    margin-top: 40px;
-    width: auto;
-    box-shadow: 7px 7px #2b2b28;
+    width: 500px;
+    box-shadow: 7px 7px #33362d;
     transition: box-shadow 500ms ease-in-out;
 }
 
 .info-box:hover{
-    box-shadow: 12px 12px #585858;
+    box-shadow: 12px 12px #545550;
 }
 
 .info-box-col {
@@ -62,20 +71,21 @@ body {
 }
 
 .info-box-title {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
 }
 
 .info-box.bootcamp {
-    line-height: 0.7;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    font-size: 14px;
+    line-height: 1.5;
+    font-size: 16px;
 }
 
+.info-box.bootcamp>p {
+    margin: 10px 0;
+}
 
 .page {
-    color: rgb(94, 93, 93);
+    color: rgb(59, 59, 59);
     line-height: 1.5;
     font-size: 18px;
     font-family: 'Arimo', sans-serif;
@@ -83,7 +93,6 @@ body {
     margin-top: 50px;
     margin-left: 360px;
     text-align: left;
-    width: 900px;
 }
 
 .section {
@@ -148,6 +157,31 @@ body {
 *  ID's  *
 **********/
 
+#java.info-box{
+    width: 400px;
+}
+
+#advc.info-box {
+    position: relative;
+    left: 30px;
+    top: 30px;
+    width: 350px;
+}
+
+#db.info-box {
+    position: relative;
+    top: 20px;
+    left: 50px;
+    width: 500px;
+}
+
+#js.info-box {
+    position: relative;
+    top: 40px;
+    left: 70px;
+    width: 250px;
+}
+
 #ac-bootcamp {
     vertical-align: middle;
 }
@@ -158,7 +192,7 @@ body {
 }
 
 #instructions {
-    margin-top:100px;
+    margin-top:50px;
 }
 
 #mazeCanvas {
