@@ -112,7 +112,7 @@ body {
 }
 
 .sidepanel {
-    background-color: #ccc;
+    background-color: rgb(61, 61, 61);
     height: 100%;
     width: 300px;
     position: fixed;

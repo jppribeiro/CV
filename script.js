@@ -340,10 +340,11 @@ function pathFinder() {
 
 function finalSolution() {
 
-  //WARNING! XY Coordinates in the stack are swapped from ones in the array!
-  for(let i = 0; i < player.stack.length; i++) {
-    maze.plan[player.stack[i][0]][player.stack[i][1]].isSolution = true;
-  }
+    for(let i = 0; i < player.stack.length; i++) {
+
+        maze.plan[player.stack[i][0]][player.stack[i][1]].isSolution = true;
+
+    }
 }
 
 function drawMaze() {
@@ -356,7 +357,7 @@ function drawMaze() {
         for (let j = 0; j < settings.yCol; j++) {
             
             if (maze.plan[i][j].type === 'wall') {
-                cx.fillStyle = fillStyles.dark_grey;
+                cx.fillStyle = fillStyles.light_grey;
                 cx.fillRect(i*settings.cellSize, j*settings.cellSize, settings.cellSize, settings.cellSize);
             }
             
