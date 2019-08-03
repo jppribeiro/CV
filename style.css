@@ -141,7 +141,7 @@ body {
 }
 
 
-@media only screen and (max-width: 1024px), only screen and (max-height: 915px) {
+@media only screen and (max-width: 1024px), only screen and (max-height: 685px) {
 
     .sidepanel {
         display: none;
@@ -236,7 +236,7 @@ body {
     display: none;
 }
 
-@media only screen and (max-width: 1024px), only screen and (max-height: 915px) {
+@media only screen and (max-width: 1024px), only screen and (max-height: 685px) {
     #responsive {
         background-color: #ddd;
         color: #2b2b28;

@@ -1,7 +1,7 @@
 let settings = {
     xCol:11,
-    yCol:31,
-    cellSize: 20,
+    yCol:27,
+    cellSize: 18,
     pathVisible: false
 }
 
@@ -30,7 +30,7 @@ let checkpoints = {
     stage1: 0,
     stage2: 0,
     stage3: 0,
-    stage4:0,
+    stage4: 0,
     stage5: 0,
     stage6: 0,
     stage7: 0,
@@ -79,29 +79,6 @@ function setGrid() {
     
 }
 
-function printMaze() {
-    for (let i = 0; i < maze.plan.length; i++) {
-        let line = '';
-        for (let j = 0; j < maze.plan[i].length; j++) {
-
-            if(maze.plan[i][j].type === 'wall') {
-                line = line + '█';
-            } else if (maze.plan[i][j].type === 'room') {
-                if (maze.plan[i][j].isExcavated === false) {
-                    line = line + checkRoomEntity(i, j);
-                } else if (maze.plan[i][j].isExcavated === true){
-                    line = line + checkRoomEntity(i, j);
-                }
-
-            } else if (maze.plan[i][j].type === 'pathway') {
-                    line = line + '□';
-            }
-
-        }
-        console.log(line);
-    }
-}
-
 //Checks if there is an entity in the room. Can be either player or prize
 function checkRoomEntity(i, j) {
   if (i === prize.position[0] && j === prize.position[1]) {
@@ -130,10 +107,6 @@ function moveExcavator(arr) {
     let availableRooms = [0,0,0,0];
 
     //Check how many rooms are available on each move direction
-
-    
-    
-    
 
     if (posY - 2 > 0 && maze.plan[posX][posY-2].type === 'room' && maze.plan[posX][posY-2].isExcavated === false) {
         availableRooms[0] = 1;
@@ -371,6 +344,9 @@ function drawMaze() {
     cx.fillStyle = fillStyles.pink;
     cx.fillRect(player.position[0] * settings.cellSize, player.position[1] * settings.cellSize, settings.cellSize, settings.cellSize);
 
+    cx.fillStyle = fillStyles.green;
+    cx.fillRect(prize.position[0] * settings.cellSize, prize.position[1] * settings.cellSize, settings.cellSize, settings.cellSize);
+
 }
 
 let fillStyles = {
@@ -378,7 +354,8 @@ let fillStyles = {
     dark_grey: '#2b2b28',
     light_grey: '#cccccc',
     pink: '#FF0296',
-    yellow: '#f0b917'
+    yellow: '#f0b917',
+    green: '#00FF9D'
 }
 
 function setCheckpoints() {
