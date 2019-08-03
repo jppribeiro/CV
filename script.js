@@ -362,13 +362,13 @@ function drawMaze() {
             }
             
             if (maze.plan[i][j].isSolution && settings.pathVisible ) {
-                cx.fillStyle = fillStyles.pink; 
+                cx.fillStyle = fillStyles.yellow; 
                 cx.fillRect(i*settings.cellSize, j*settings.cellSize, settings.cellSize, settings.cellSize);
             }   
         }
     }
 
-    cx.fillStyle = fillStyles.yellow;
+    cx.fillStyle = fillStyles.pink;
     cx.fillRect(player.position[0] * settings.cellSize, player.position[1] * settings.cellSize, settings.cellSize, settings.cellSize);
 
 }
@@ -376,8 +376,8 @@ function drawMaze() {
 let fillStyles = {
     beige: '#ebebe3',
     dark_grey: '#2b2b28',
-    light_grey: '#4a4a48',
-    pink: '#c19898',
+    light_grey: '#cccccc',
+    pink: '#FF0296',
     yellow: '#f0b917'
 }
 
