@@ -16,6 +16,9 @@
                 <div id="player" class="maze-item">
                     <span>YOU</span>
                 </div>
+                <div>
+                    <i class="fas fa-long-arrow-alt-right"></i>
+                </div>
                 <div id="goal" class="maze-item">
                     <span>YOUR GOAL</span>
                 </div>
@@ -150,6 +153,175 @@
                 </div>
                 <div id="stage4" class="section">
                     <h1 class="title">...education</h1>
+                    <div class="project">
+                        <h2>// Java Bank</h2>
+                        <h3>_The Idea</h3>
+                        <div class="proj-description">
+                            <p>Starting from our knowledge of the Java programming language, 
+                                having a simple stand-alone program, the challenge was to create a 
+                                full web enterprise application, using different methodologies, architectures 
+                                and frameworks.</p>
+                        </div>
+                        <h3>_The Development</h3>
+                        <div class="proj-description">
+                            <p>
+                                The application started very simple, and was grown through various steps, that 
+                                showed us not only what problems they solved, the decisions involved, but also 
+                                how they integrated in the final product. 
+                            </p>
+                            <p>
+                                    The first major step was to implement the Model-View-Controller Architecture, 
+                                    separating the UI from the business logic and data, using an intermediary layer.
+                            </p>
+                            <p>
+                                    Next we extracted business logic from the raw data by creating a Service layer, 
+                                    allowing us to more easily scale our application. Here we also transformed our 
+                                    project into a Maven project to more easily manage and scale our application.
+                            </p>
+                            <p>
+                                    The next logical step was to add persistence to our data with the introduction 
+                                    of relational databases. Because of the architecture that was implemented we 
+                                    were able to easily make our application agnostic to any specific RDBMS. 
+                                    During this step we were introduced to JPA and Hibernate.
+                            </p>
+                            <p>
+                                    The final step came with the introduction of the Spring framework and its modules, 
+                                    transforming our application into an API to be used as a back-end of our web 
+                                    application developed with HTML+CSS+JavaScript.
+                            </p>
+                        </div>
+                        <h3>_Tech && Methodologies</h3>
+                        <div class="proj-description">
+                            <p>
+                                    Java, IntelliJ, Mac OS, Maven, JUnit, Mockito, Hibernate, Spring, Spring MVC, Spring REST, Spring Transaction, Tomcat, JPA, git, SQL, RDBMS
+                            </p>
+                        </div>
+                    </div>
+                    <div class="project">
+                            <h2>// The Cave</h2>
+                            <h3>_The Idea</h3>
+                            <div class="proj-description">
+                                <p>
+                                        This was our first group project. Our idea was to create a simple 2-player game 
+                                        set in a distant planet. The players had to find a way through a maze in order 
+                                        to find a special crystal that gave them powers. Once the crystal was caught the 
+                                        maze ghosts would appear looking for the intruder.
+                                </p>
+                            </div>
+                            <h3>_The Development</h3>
+                            <div class="proj-description">
+                                <p>
+                                        Once the idea matured and each member contributed their ideas, the base requirements 
+                                        were defined. Together we came up with a preliminary UML Class diagram that gave us a 
+                                        global vision of the structure of our project. From there the division of tasks between 
+                                        team members was relatively straightforward. 
+                                </p>
+                                <p>
+                                        We used the Simple Graphics library developed at &lt;Academia de Código_&gt; to support our 
+                                        graphic interface. The project was developed in Java 10.
+                                </p>
+                                <p>
+                                        There are many bugs that we are aware of (mainly regarding concurrency problems and the Simple 
+                                        GFX library), but we learned a lot, not only to build a project from the ground up, but also 
+                                        to work in a team and listen to everyone's opinions.
+                                </p>
+                                <p>
+                                        We used GIMP to prepare all the necessary images and also Keynote to prepare our presentation.
+                                </p>
+                            </div>
+                            <h3>_My Role</h3>
+                            <div class="proj-description">
+                                <p>    
+                                    I was in charge of developing the depth-first search algorithm that generated the maze. The maze is 
+                                    randomly generated for each new game. I also developed the implementation for the fog-of-war that 
+                                    surrounds the two players. Each player only sees up to a certain distance making the game more challenging. 
+                                </p>
+                                <p>
+                                    For the presentation we created a small theater play where I was the narrator and my colleagues 
+                                    enacted all the action. I was responsible for designing the slides.
+                                </p>
+                            </div>
+                            <h3>_Tech && Methodologies</h3>
+                            <div class="proj-description">
+                                <p>
+                                        Java, IntelliJ, Mac OS, git, GIMP, Keynote
+                                </p>
+                            </div>
+                    </div>
+                    <div class="project">
+                            <h2>// Chat Server</h2>
+                            <h3>_The Idea</h3>
+                            <div class="proj-description">
+                                <p>
+                                    Create a concurrent chat server supporting multiple clients.
+                                </p>
+                            </div>
+                            <h3>_The Development</h3>
+                            <div class="proj-description">
+                                <p>
+                                    Using Java I developed the Server and Client applications in small steps, 
+                                    adding features one at a time. The program runs on the console and each 
+                                    client is asked to enter its name. It also supports commands like:
+                                </p>
+                                <p>
+                                    '/list' - show the list of user currently logged.
+                                    '/whisper' - send a message to a specific client.
+                                    '/quit' - self-explanatory
+                                </p>
+                            </div>
+                            <h3>_Tech && Methodologies</h3>
+                            <div class="proj-description">
+                                <p>
+                                    Java, IntelliJ, TCP, Socket, Concurrency, Mac OS, git
+                                </p>
+                            </div>
+                    </div>
+                    <div class="project">
+                            <h2>// Map Editor</h2>
+                            <h3>_The Idea</h3>
+                            <div class="proj-description">
+                                <p>
+                                        Using the Simple Graphics library developed at &lt;Academia de Código_&gt; 
+                                        the challenge was to create a simple pixel editor that could save and load files.
+                                </p>
+                            </div>
+                            <h3>_The Development</h3>
+                            <div class="proj-description">
+                                <p>
+                                        The program works based on a grid implemented with a bi-dimensional array. Each 
+                                        position on the array is capable of storing a certain state: painted, color, hovered, 
+                                        etc. It works with the keyboard. The save file registers each active cell state. 
+                                        The load files allows to recover a certain saved grid state.
+                                </p>
+                            </div>
+                            <h3>_Tech && Methodologies</h3>
+                            <div class="proj-description">
+                                <p>
+                                    Java, IntelliJ, Mac OS, Simple GFX, git
+                                </p>
+                            </div>
+                    </div>
+                    <div class="project">
+                            <h2>// Web Server</h2>
+                            <h3>_The Idea</h3>
+                            <div class="proj-description">
+                                <p>
+                                    To create a simple Web Server that supported one client only.
+                                </p>
+                            </div>
+                            <h3>_The Development</h3>
+                            <div class="proj-description">
+                                <p>
+                                    Using Java I developed a Web Server that served .html and image files to one client.
+                                </p>
+                            </div>
+                            <h3>_Tech && Methodologies</h3>
+                            <div class="proj-description">
+                                <p>
+                                    Java, IntelliJ, Mac OS, git
+                                </p>
+                            </div>
+                    </div>
                 </div>
                 <div id="stage5" class="section">
                     <h1 class="title">work experience</h1>

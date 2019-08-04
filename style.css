@@ -10,6 +10,10 @@ body {
     min-height: 100%;
 }
 
+#stage1>p {
+    width: 70%;
+    text-align: justify;
+}
 
 /*****************
 *    CLASSES     *
@@ -88,7 +92,6 @@ body {
     font-family: 'Arimo', sans-serif;
     font-size: 12px;
     font-weight: bold;
-    margin: 0 50px;
     width: 40px;
     height: 40px;
 }
@@ -103,6 +106,16 @@ body {
     margin-left: 360px;
     overflow: auto;
     text-align: left;
+}
+
+.project {
+    margin-bottom: 80px;
+    width: 70%;
+}
+
+.proj-description>p {
+    margin-left: 40px;
+    text-align: justify;
 }
 
 .section {
@@ -125,7 +138,8 @@ body {
 .sidepanel {
     background-color: rgb(61, 61, 61);
     height: 100%;
-    width: 300px;
+    width: 270px;
+    min-width: 14%;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -215,7 +229,7 @@ body {
 
 #head {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     background-color:  #cecece;
     color: #2b2b28;
     font-family: 'Montserrat', sans-serif;
