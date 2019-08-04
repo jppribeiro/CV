@@ -26,7 +26,10 @@
             <div class="maze">
                 <canvas id="mazeCanvas" width="198" height="486"></canvas>
                 <br/>
-                <button onclick="showPath()">I'm Stuck</button>
+                
+            </div>
+            <div id="buttons">
+                <button onclick="showPath()" class="button">I'm Stuck</button>
             </div>
     </div>
 
@@ -197,135 +200,28 @@
                             </p>
                         </div>
                     </div>
-                    <div class="project">
-                            <h2>// The Cave</h2>
-                            <h3>_The Idea</h3>
-                            <div class="proj-description">
-                                <p>
-                                        This was our first group project. Our idea was to create a simple 2-player game 
-                                        set in a distant planet. The players had to find a way through a maze in order 
-                                        to find a special crystal that gave them powers. Once the crystal was caught the 
-                                        maze ghosts would appear looking for the intruder.
-                                </p>
-                            </div>
-                            <h3>_The Development</h3>
-                            <div class="proj-description">
-                                <p>
-                                        Once the idea matured and each member contributed their ideas, the base requirements 
-                                        were defined. Together we came up with a preliminary UML Class diagram that gave us a 
-                                        global vision of the structure of our project. From there the division of tasks between 
-                                        team members was relatively straightforward. 
-                                </p>
-                                <p>
-                                        We used the Simple Graphics library developed at &lt;Academia de Código_&gt; to support our 
-                                        graphic interface. The project was developed in Java 10.
-                                </p>
-                                <p>
-                                        There are many bugs that we are aware of (mainly regarding concurrency problems and the Simple 
-                                        GFX library), but we learned a lot, not only to build a project from the ground up, but also 
-                                        to work in a team and listen to everyone's opinions.
-                                </p>
-                                <p>
-                                        We used GIMP to prepare all the necessary images and also Keynote to prepare our presentation.
-                                </p>
-                            </div>
-                            <h3>_My Role</h3>
-                            <div class="proj-description">
-                                <p>    
-                                    I was in charge of developing the depth-first search algorithm that generated the maze. The maze is 
-                                    randomly generated for each new game. I also developed the implementation for the fog-of-war that 
-                                    surrounds the two players. Each player only sees up to a certain distance making the game more challenging. 
-                                </p>
-                                <p>
-                                    For the presentation we created a small theater play where I was the narrator and my colleagues 
-                                    enacted all the action. I was responsible for designing the slides.
-                                </p>
-                            </div>
-                            <h3>_Tech && Methodologies</h3>
-                            <div class="proj-description">
-                                <p>
-                                        Java, IntelliJ, Mac OS, git, GIMP, Keynote
-                                </p>
-                            </div>
-                    </div>
-                    <div class="project">
-                            <h2>// Chat Server</h2>
-                            <h3>_The Idea</h3>
-                            <div class="proj-description">
-                                <p>
-                                    Create a concurrent chat server supporting multiple clients.
-                                </p>
-                            </div>
-                            <h3>_The Development</h3>
-                            <div class="proj-description">
-                                <p>
-                                    Using Java I developed the Server and Client applications in small steps, 
-                                    adding features one at a time. The program runs on the console and each 
-                                    client is asked to enter its name. It also supports commands like:
-                                </p>
-                                <p>
-                                    '/list' - show the list of user currently logged.
-                                    '/whisper' - send a message to a specific client.
-                                    '/quit' - self-explanatory
-                                </p>
-                            </div>
-                            <h3>_Tech && Methodologies</h3>
-                            <div class="proj-description">
-                                <p>
-                                    Java, IntelliJ, TCP, Socket, Concurrency, Mac OS, git
-                                </p>
-                            </div>
-                    </div>
-                    <div class="project">
-                            <h2>// Map Editor</h2>
-                            <h3>_The Idea</h3>
-                            <div class="proj-description">
-                                <p>
-                                        Using the Simple Graphics library developed at &lt;Academia de Código_&gt; 
-                                        the challenge was to create a simple pixel editor that could save and load files.
-                                </p>
-                            </div>
-                            <h3>_The Development</h3>
-                            <div class="proj-description">
-                                <p>
-                                        The program works based on a grid implemented with a bi-dimensional array. Each 
-                                        position on the array is capable of storing a certain state: painted, color, hovered, 
-                                        etc. It works with the keyboard. The save file registers each active cell state. 
-                                        The load files allows to recover a certain saved grid state.
-                                </p>
-                            </div>
-                            <h3>_Tech && Methodologies</h3>
-                            <div class="proj-description">
-                                <p>
-                                    Java, IntelliJ, Mac OS, Simple GFX, git
-                                </p>
-                            </div>
-                    </div>
-                    <div class="project">
-                            <h2>// Web Server</h2>
-                            <h3>_The Idea</h3>
-                            <div class="proj-description">
-                                <p>
-                                    To create a simple Web Server that supported one client only.
-                                </p>
-                            </div>
-                            <h3>_The Development</h3>
-                            <div class="proj-description">
-                                <p>
-                                    Using Java I developed a Web Server that served .html and image files to one client.
-                                </p>
-                            </div>
-                            <h3>_Tech && Methodologies</h3>
-                            <div class="proj-description">
-                                <p>
-                                    Java, IntelliJ, Mac OS, git
-                                </p>
-                            </div>
-                    </div>
                 </div>
                 <div id="stage5" class="section">
                     <h1 class="title">work experience</h1>
-
+                    <h2>SENER</h2>
+                    <p id="timeline">2008 <i class="fas fa-long-arrow-alt-right"></i> 2019</p>
+                    <div>
+                        <p>
+                            For the past 10 years I've worked at SENER designing bridges throughout the world.
+                        </p>
+                        <p>During that time my passion for programming started to flourish.</p>
+                        <p>As a Structural Bridge Engineer I worked in a variety of project types, sizes and complexities.</p>
+                        <p>My responsibilities included:</p>
+                        <ul class="fa-ul">
+                            <li><span class="fa-li"><i class="fas fa-angle-right"></i></span>Preparation of structural models and calculations.</li>
+                            <li><span class="fa-li"><i class="fas fa-angle-right"></i></span>Preparation of bridge-related structural scheme designs at feasibility, tender and detailed design stages.</li>
+                            <li><span class="fa-li"><i class="fas fa-angle-right"></i></span>Providing mentoring to graduate engineers and technicians.</li>
+                            <li><span class="fa-li"><i class="fas fa-angle-right"></i></span>Preparation of drawings and detailed sketches of engineering solutions.</li>
+                            <li><span class="fa-li"><i class="fas fa-angle-right"></i></span>Interfacing with other engineering disciplines.</li>
+                            <li><span class="fa-li"><i class="fas fa-angle-right"></i></span>Responsible for resolving technical and construction-related issues.</li>
+                            <li><span class="fa-li"><i class="fas fa-angle-right"></i></span>Managed a challenging workload subject to change.</li>
+                        </ul>
+                    </div>
                 </div>
         </div>
         

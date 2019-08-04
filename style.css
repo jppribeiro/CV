@@ -250,6 +250,10 @@ body {
     display: none;
 }
 
+#timeline {
+    font-size: 14px;
+}
+
 @media only screen and (max-width: 1024px), only screen and (max-height: 685px) {
     #responsive {
         background-color: #ddd;
@@ -285,19 +289,24 @@ body {
 * Buttons *
 **********/
 
-button {
-    font-family: 'Roboto Mono', monospace;
-    font-size: 14px;
-    font-weight: bold;
-    width: 80px;
-    height: 45px;
-    border-width: 0;
-    background-color: #666;
-    color: #ddd;
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
 }
 
 button:hover {
     background-color: gold;
     color: #2b2b28;
+}
+
+.button {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    font-weight: bold;
+    width: 60px;
+    height: 45px;
+    border-width: 0;
+    background-color: #666;
+    color: #ddd;
 }
 
